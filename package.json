@@ -1,0 +1,19 @@
+{
+  "name": "joob",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "mongoose": "^8.4.0",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "swiper": "^11.1.3",
+    "zustand": "^4.5.2"
+  }
+}
