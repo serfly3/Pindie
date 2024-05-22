@@ -8,15 +8,11 @@ import { useStore } from "@/app/store/app-store";
 
 export const AuthForm = (props) => {
   const authContext = useStore();
-
   const [authData, setAuthData] = useState({ email: "", password: "" });
-
   const [message, setMessage] = useState({ status: null, text: null });
-
   const handleInput = (e) => {
     setAuthData({ ...authData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userData = await authorize(endpoints.auth, authData);
@@ -27,7 +23,6 @@ export const AuthForm = (props) => {
       setMessage({ status: "error", text: "Неверные почта или пароль" });
     }
   };
-
   useEffect(() => {
     let timer;
     if (authContext.user) {
@@ -38,7 +33,6 @@ export const AuthForm = (props) => {
     }
     return () => clearTimeout(timer);
   }, [authContext.user]);
-
   return (
     <form onSubmit={handleSubmit} className={Styles["form"]}>
       <h2 className={Styles["form__title"]}>Авторизация</h2>
